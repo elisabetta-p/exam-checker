@@ -10,6 +10,8 @@
 #define domanda_hpp
 
 #include <string>
+#include <vector>
+#include <iostream>
 
 class Domanda {
 private:
@@ -29,5 +31,6 @@ public:
     int getRispostaQuattro() const;
     int getRispostaCinque() const;
     std::string serializza(char) const;
+    static Domanda deserializza(const std::vector<std::string>&);
 };
 #endif /* domanda_hpp */

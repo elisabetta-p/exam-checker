@@ -10,24 +10,8 @@
 #include <string>
 #include <fstream>
 
-Esame::Esame() {
-    int numTotDomande;
-    setData();
-    std::cout << "Da quante domande e' composto l'esame? ";
-    std::cin >> numTotDomande;
-    std::cout <<"L'esame e' composto da " << numTotDomande << " domande. Se non e' corretto, riavviare il programma e reinserire il numero corretto di domande." << std::endl;
-    std::cout << "Ora ti verra' chiesto di inserire i punteggi delle quattro risposte alle domande." << std::endl;
-    for (int i = 0; i < numTotDomande; ++i) {
-        //inserimento del valore delle domande
-        inserisciValoriDomande(i+1);
-    }
-}
-
-void Esame::setData() {
-    string exData;
-    std::cout <<"Inserisci la data dell'esame (formato: 12-12-2002): ";
-    std::cin >> exData;
-    data = exData;
+void Esame::setData(string s) {
+    data = s;
 }
 
 string Esame::getData() const {
@@ -121,3 +105,7 @@ void Esame::save() const {
     file.close();
 }
  */
+
+void Esame::insertDomanda(const Domanda & d) {
+    vettoreDomanda.push_back(d);
+}

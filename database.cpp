@@ -15,16 +15,18 @@ void Database::load(Esame& esame) {
     file.open(path, std::ios::in);
     if (file.is_open()) {
         string currentLine;
-        std::getline(file, currentLine, ';');
+        std::getline(file, currentLine, '\n');
         
-        while (std::getline(file, currentLine, ';')) {
+        while (std::getline(file, currentLine, '\n')) {
             std::stringstream buffer(currentLine);
             
             vector<string> values;
             string currentValue;
             
-            while (std::getline(buffer, currentValue, delimiter))
+            while (std::getline(buffer, currentValue, delimiter)) 
                 values.push_back(currentValue);
+            
+            esame.insertDomanda(Domanda::deserializza(values));
         }
     }
 }

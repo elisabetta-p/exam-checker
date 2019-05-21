@@ -25,11 +25,11 @@ public:
     int getPunteggio(int) const;
     void inserisciValoriDomande(int);
     int totPunteggio() const;
-    Esame();
     void save() const;
-    void setData();
+    void setData(string);
     string getData() const;
     vector<Domanda> getDomande() const;
+    void insertDomanda(const Domanda&);
 };
 
 #endif /* esame_hpp */
