@@ -12,12 +12,12 @@
 
 Exp::Exp (char ecc) : c(ecc) {
     if (ecc == 'f') {
-        std::cout << "Caricamento o creazione del nuovo esame fallito!" << std::endl;
+        std::cerr << "Caricamento o creazione del nuovo esame fallito!" << std::endl;
+    }
+    else if (ecc == 'r') {
+        std::cerr << "Valore di risposta inserito sbagliato" << std::endl;
     }
     else if (ecc == 'd') {
-        std::cout << "Numero di domanda inserito sbagliato" << std::endl;
-    }
-    else if (ecc == 's') {
-        std::cout << "Domanda inserita sbagliata" << std::endl;
+        std::cerr << "Hai selezionato una risposta che non esiste" << std::endl;
     }
 }

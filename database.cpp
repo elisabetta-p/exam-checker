@@ -29,17 +29,20 @@ void Database::load(Esame& esame) {
             esame.insertDomanda(Domanda::deserializza(values));
         }
     }
+    else {
+        throw Exp('f');
+    }
 }
 
 void Database::save(const Esame& esame) {
     std::ofstream file;
-    file.open(path, std::ofstream::out);
+    file.open(path, std::ofstream::trunc);
 
     
     if (file.is_open()) {
         file << "# " +esame.getData() << "\n";
         for (auto it = esame.getDomande().begin() ; it != esame.getDomande().end() ; ++it) {
-            file << it->serializza(delimiter) << std::endl;
+            file << it->serializza(delimiter);
         }
     }
 }

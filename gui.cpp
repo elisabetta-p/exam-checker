@@ -10,7 +10,7 @@
 
 int Gui::numeroDomande() const {
     int numD;
-    std::cout << "Da quante domande e' comporsto l'esame? " << std::endl;
+    std::cout << "Da quante domande e' composto l'esame? " << std::endl;
     std::cin >> numD;
     return numD;
 }
@@ -36,11 +36,16 @@ void Gui::creaNuovoEsame() {
 }
 
 void Gui::caricaVecchioEsame() {
-    string nomeEsame;
-    std::cout << "Inserisci il nome dell'esame che vuoi caricare: " << std::endl;
-    std::cin >> nomeEsame;
-    Database db("./"+nomeEsame+".txt", '|');
-    db.load(esame);
+    try {
+        string nomeEsame;
+        std::cout << "Inserisci il nome dell'esame che vuoi caricare: " << std::endl;
+        std::cin >> nomeEsame;
+        Database db("./"+nomeEsame+".txt", '|');
+        db.load(esame);
+    }
+    catch (Exp e) {
+        caricaVecchioEsame();
+    }
 }
 
 void Gui::salvataggioEsame() {
@@ -50,8 +55,13 @@ void Gui::salvataggioEsame() {
 }
 
 void Gui::correggiDomande() {
-    std::cout << "Ora c'e' la parte di correzione delle domande." << std::endl;
-    std::cout << "Inserisci in numero la risposta selezionata (5 se lasciata in bianco)"<< std::endl;
-    int totPunteggio = esame.totPunteggio();
-    std::cout << "Il totale dell'esame e': " << totPunteggio << std::endl;
+    try {
+        std::cout << "Ora c'e' la parte di correzione delle domande." << std::endl;
+        std::cout << "Inserisci in numero la risposta selezionata (5 se lasciata in bianco)"<< std::endl;
+        int totPunteggio = esame.totPunteggio();
+        std::cout << "Il totale dell'esame e': " << totPunteggio << " e ha preso "<< esame.getVoto(totPunteggio) << " su 30. " << std::endl;
+    }
+    catch (Exp e) {
+        correggiDomande();
+    }
 }

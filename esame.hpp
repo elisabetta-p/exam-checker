@@ -22,9 +22,9 @@ private:
     string data; //formato 12 Dicembre 2014;
     vector<Domanda> vettoreDomanda;
 public:
-    int getPunteggio(int) const;
     void inserisciValoriDomande(int);
     int totPunteggio() const;
+    int getVoto(int) const;
     void save() const;
     void setData(string);
     string getData() const;

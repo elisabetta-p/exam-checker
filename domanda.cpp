@@ -9,18 +9,22 @@
 #include "domanda.hpp"
 
 void Domanda::setRispostaUno(int i) {
+    if (i > 2 || i < -2) throw Exp('r');
     rispUno = i;
 }
 
 void Domanda::setRispostaDue(int i) {
+    if (i > 2 || i < -2) throw Exp('r');
     rispDue = i;
 }
 
 void Domanda::setRispostaTre(int i) {
+    if (i > 2 || i < -2) throw Exp('r');
     rispTre = i;
 }
 
 void Domanda::setRispostaQuattro(int i) {
+    if (i > 2 || i < -2) throw Exp('r');
     rispQuattro = i;
 }
 
