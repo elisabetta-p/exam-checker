@@ -14,9 +14,12 @@
 #include <vector>
 using std::vector;
 #include <iostream>
+#include <string>
+using std::string;
 
 class Esame {
 private:
+    string data; //formato 12 Dicembre 2014;
     vector<Domanda> vettoreDomanda;
 public:
     int getPunteggio(int) const;
@@ -24,6 +27,9 @@ public:
     int totPunteggio() const;
     Esame();
     void save() const;
+    void setData();
+    string getData() const;
+    vector<Domanda> getDomande() const;
 };
 
 #endif /* esame_hpp */

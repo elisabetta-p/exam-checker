@@ -12,6 +12,7 @@
 
 Esame::Esame() {
     int numTotDomande;
+    setData();
     std::cout << "Da quante domande e' composto l'esame? ";
     std::cin >> numTotDomande;
     std::cout <<"L'esame e' composto da " << numTotDomande << " domande. Se non e' corretto, riavviare il programma e reinserire il numero corretto di domande." << std::endl;
@@ -20,6 +21,17 @@ Esame::Esame() {
         //inserimento del valore delle domande
         inserisciValoriDomande(i+1);
     }
+}
+
+void Esame::setData() {
+    string exData;
+    std::cout <<"Inserisci la data dell'esame (formato: 12-12-2002): ";
+    std::cin >> exData;
+    data = exData;
+}
+
+string Esame::getData() const {
+    return data;
 }
 
 int Esame::getPunteggio(int domandaRisposta) const {
@@ -94,6 +106,10 @@ int Esame::totPunteggio() const {
     return tot;
 }
 
+vector<Domanda> Esame::getDomande() const {
+    return vettoreDomanda;
+}
+/*
 void Esame::save() const {
     std::string filename;
     std::cout << "Inserisci il nome con cui vuoi salvare il file: ";
@@ -104,3 +120,4 @@ void Esame::save() const {
     //ho il file aperto -> ora dovrei scriverci dentro la roba...
     file.close();
 }
+ */

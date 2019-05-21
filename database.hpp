@@ -13,10 +13,12 @@
 #include <sstream>
 #include <iostream>
 #include <string>
+#include <vector>
 
 #include "esame.hpp"
 
 using std::string;
+using std::vector;
 
 class Database {
 private:
@@ -24,7 +26,7 @@ private:
     char delimiter;
 public:
     Database(string ="nd", char =',');
-    void load(const Esame&);
+    void load(Esame&);
     void save(const Esame&);
 };
 

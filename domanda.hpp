@@ -9,6 +9,8 @@
 #ifndef domanda_hpp
 #define domanda_hpp
 
+#include <string>
+
 class Domanda {
 private:
     int numDomanda, rispUno, rispDue, rispTre, rispQuattro;
@@ -26,6 +28,6 @@ public:
     int getRispostaTre() const;
     int getRispostaQuattro() const;
     int getRispostaCinque() const;
-    
+    std::string serializza(char) const;
 };
 #endif /* domanda_hpp */
