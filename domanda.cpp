@@ -50,7 +50,7 @@ rispTre(t),
 rispQuattro(q) {}
 
 std::string Domanda::serializza(char delimiter) const {
-    return std::to_string(numDomanda) + "|" + std::to_string(rispUno) + "|" + std::to_string(rispDue) + "|" + std::to_string(rispTre) + "|"+  std::to_string(rispQuattro) + "\n";
+    return std::to_string(numDomanda) + "|" + std::to_string(rispUno) + "|" + std::to_string(rispDue) + "|" + std::to_string(rispTre) + "|"+  std::to_string(rispQuattro) + "\r\n";
 }
 
 Domanda Domanda::deserializza(const std::vector<std::string> & valori) {

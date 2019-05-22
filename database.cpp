@@ -40,7 +40,7 @@ void Database::save(const Esame& esame) {
 
     
     if (file.is_open()) {
-        file << "# " +esame.getData() << "\n";
+        file << "# " +esame.getData() << "\r\n";
         for (auto it = esame.getDomande().begin() ; it != esame.getDomande().end() ; ++it) {
             file << it->serializza(delimiter);
         }
