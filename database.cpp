@@ -38,11 +38,14 @@ void Database::save(const Esame& esame) {
     std::ofstream file;
     file.open(path, std::ofstream::trunc);
 
-    
     if (file.is_open()) {
         file << "# " +esame.getData() << "\r\n";
-        for (auto it = esame.getDomande().begin() ; it != esame.getDomande().end() ; ++it) {
+
+        const vector<Domanda> domande = esame.getDomande();
+
+        for (auto it = domande.begin(); it != domande.end(); ++it) {
             file << it->serializza(delimiter);
         }
+
     }
 }

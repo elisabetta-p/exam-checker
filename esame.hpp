@@ -28,7 +28,7 @@ public:
     void save() const;
     void setData(string);
     string getData() const;
-    vector<Domanda> getDomande() const;
+    const vector<Domanda> getDomande() const;
     void insertDomanda(const Domanda&);
 };
 

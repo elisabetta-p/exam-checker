@@ -31,6 +31,7 @@ public:
     int getRispostaTre() const;
     int getRispostaQuattro() const;
     int getRispostaCinque() const;
+    int getNumDomanda() const;
     std::string serializza(char) const;
     static Domanda deserializza(const std::vector<std::string>&);
 };

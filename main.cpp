@@ -33,9 +33,6 @@ int main(int argc, char* argv[]) {
         }
         
         gui.correggiDomande();
-        
-        //else throw Exp('f'); // CARICAMENTO FALLITO
-
     }
 
 }

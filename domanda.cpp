@@ -44,7 +44,9 @@ int Domanda::getRispostaQuattro() const {
     return rispQuattro;
 }
 
-
+int Domanda::getNumDomanda() const {
+ 	return numDomanda;
+}
 
 Domanda::Domanda(int numD, int u, int d, int t, int q) : numDomanda(numD),
 rispUno(u),
@@ -53,7 +55,6 @@ rispTre(t),
 rispQuattro(q) {}
 
 std::string Domanda::serializza(char delimiter) const {
-    std::cout << numDomanda << " " << rispUno << " " <<rispDue<< " " <<rispTre << " " <<rispQuattro << std::endl;
     return std::to_string(numDomanda) + "|" + std::to_string(rispUno) + "|" + std::to_string(rispDue) + "|" + std::to_string(rispTre) + "|"+  std::to_string(rispQuattro) + "\r\n";
 }
 

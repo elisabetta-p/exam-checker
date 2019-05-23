@@ -17,15 +17,15 @@ int Gui::numeroDomande() const {
 
 void Gui::inserimentoValoriDomande(int numDomande) {
     std::cout << "Ora ti verra' chiesto di inserire i punteggi delle quattro risposte alle domande." << std::endl;
-    for (int i = 0; i < numDomande; ++i) {
+    for (int i = 1; i <= numDomande; ++i) {
         //inserimento del valore delle domande
-        esame.inserisciValoriDomande(i+1);
+        esame.inserisciValoriDomande(i);
     }
 }
 
 void Gui::dataEsame() {
     string exData;
-    std::cout <<"Inserisci la data dell'esame (formato: 12-12-2002): ";
+    std::cout <<"Inserisci la data dell'esame (non usare / o \\ nel formato della data): ";
     std::cin >> exData;
     esame.setData(exData);
 }
