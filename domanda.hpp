@@ -19,7 +19,7 @@ private:
     int numDomanda, rispUno, rispDue, rispTre, rispQuattro;
 public:
     bool uno, due, tre, quattro, cinque; //a quale di questa domanda ha risposto?
-    Domanda(int =0, int = 0, int = 0, int = 0, int = 0);
+    Domanda(int, int = 0, int = 0, int = 0, int = 0);
     //setto quali sono i punteggi di ogni risposta alla domanda
     void setRispostaUno(int);
     void setRispostaDue(int);

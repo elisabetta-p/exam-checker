@@ -22,7 +22,8 @@ string Esame::getData() const {
 void Esame::inserisciValoriDomande(int numDomanda) {
     try {
         int punteggio;
-        Domanda domanda;
+        Domanda domanda(numDomanda);
+        
         std::cout << "Inserisci il punteggio della PRIMA risposta della domanda numero " << numDomanda << ": " << std::endl;
         std::cin >> punteggio;
         domanda.setRispostaUno(punteggio);
@@ -37,6 +38,7 @@ void Esame::inserisciValoriDomande(int numDomanda) {
         domanda.setRispostaQuattro(punteggio);
         vettoreDomanda.push_back(domanda);
         std::cout << " " << std::endl;
+        
     }
     catch (Exp e) {
         inserisciValoriDomande(numDomanda);
