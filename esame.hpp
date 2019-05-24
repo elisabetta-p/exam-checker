@@ -11,6 +11,7 @@
 
 #include "exp.hpp"
 #include "domanda.hpp"
+#include "verofalso.hpp"
 #include <vector>
 using std::vector;
 #include <iostream>
@@ -21,15 +22,21 @@ class Esame {
 private:
     string data; //formato 12 Dicembre 2014;
     vector<Domanda> vettoreDomanda;
+    vector<VeroFalso> vettoreVeroFalso;
 public:
     void inserisciValoriDomande(int);
-    int totPunteggio() const;
+    void inserisciValoriVeroFalso(int);
+    int totPunteggioDomande() const;
+    int totPunteggioVeroFalso() const;
+    int TotPunteggioGlobale() const;
     int getVoto(int) const;
     void save() const;
     void setData(string);
     string getData() const;
     const vector<Domanda> getDomande() const;
+    const vector<VeroFalso> getVF() const;
     void insertDomanda(const Domanda&);
+    void insertVF(const VeroFalso&);
 };
 
 #endif /* esame_hpp */

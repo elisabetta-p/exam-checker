@@ -15,11 +15,26 @@ int Gui::numeroDomande() const {
     return numD;
 }
 
+int Gui::numeroDomandeVF() const {
+    int numVF;
+    std::cout << "Da quante domande Vero Falso e' composto l'esame? " << std::endl;
+    std::cin >> numVF;
+    return numVF;
+}
+
 void Gui::inserimentoValoriDomande(int numDomande) {
     std::cout << "Ora ti verra' chiesto di inserire i punteggi delle quattro risposte alle domande." << std::endl;
     for (int i = 1; i <= numDomande; ++i) {
         //inserimento del valore delle domande
         esame.inserisciValoriDomande(i);
+    }
+}
+
+void Gui::inserimentoValoriVeroFalso(int numDomandeVF) {
+    std::cout << "Ora ti verra' chiesto di inserire i punteggi delle due risposte ai vero falso." << std::endl;
+    for (int i = 1; i <= numDomandeVF; ++i) {
+        //inserimento del valore delle domande
+        esame.inserisciValoriVeroFalso(i);
     }
 }
 
@@ -33,6 +48,7 @@ void Gui::dataEsame() {
 void Gui::creaNuovoEsame() {
     dataEsame();
     inserimentoValoriDomande(numeroDomande());
+    inserimentoValoriVeroFalso(numeroDomandeVF());
 }
 
 void Gui::caricaVecchioEsame() {
@@ -54,14 +70,14 @@ void Gui::salvataggioEsame() {
     std::cout << "Salvataggio del nuovo esame avvenuto con successo" << std::endl;
 }
 
-void Gui::correggiDomande() {
+void Gui::votoEsame() const{
     try {
         std::cout << "Ora c'e' la parte di correzione delle domande." << std::endl;
-        std::cout << "Inserisci in numero la risposta selezionata (5 se lasciata in bianco)"<< std::endl;
-        int totPunteggio = esame.totPunteggio();
+        std::cout << "Inserisci in numero la risposta selezionata (5 se e' una domanda lasciata in bianco, 3 se e' un vero falso lasciato in bianco)"<< std::endl;
+        int totPunteggio = esame.TotPunteggioGlobale();
         std::cout << "Il totale dell'esame e': " << totPunteggio << " e ha preso "<< esame.getVoto(totPunteggio) << " su 30. " << std::endl;
     }
     catch (Exp e) {
-        correggiDomande();
+        votoEsame();
     }
 }

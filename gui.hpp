@@ -16,15 +16,17 @@
 class Gui {
 private:
     Esame esame;
-    int numeroDomande() const;
-    
     void dataEsame();
 public:
+    int numeroDomande() const;
+    int numeroDomandeVF() const;
     void inserimentoValoriDomande(int);
+    void inserimentoValoriVeroFalso(int);
     void creaNuovoEsame();
     void caricaVecchioEsame();
     void salvataggioEsame();
-    void correggiDomande();
+    
+    void votoEsame() const;
 };
 
 #endif /* gui_hpp */

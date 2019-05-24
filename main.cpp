@@ -32,7 +32,7 @@ int main(int argc, char* argv[]) {
             gui.caricaVecchioEsame();
         }
         
-        gui.correggiDomande();
+        gui.votoEsame();
     }
 
 }

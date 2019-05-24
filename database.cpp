@@ -26,7 +26,14 @@ void Database::load(Esame& esame) {
             while (std::getline(buffer, currentValue, delimiter)) 
                 values.push_back(currentValue);
             
-            esame.insertDomanda(Domanda::deserializza(values));
+            string tipoDomanda = values[0].substr(1, string::npos);
+            values.erase(values.begin());
+            
+            
+            if (tipoDomanda=="D")
+                esame.insertDomanda(Domanda::deserializza(values));
+            if (tipoDomanda=="V")
+                esame.insertVF(VeroFalso::deserializza(values));
         }
     }
     else {
@@ -42,8 +49,12 @@ void Database::save(const Esame& esame) {
         file << "# " +esame.getData() << "\r\n";
 
         const vector<Domanda> domande = esame.getDomande();
+        const vector<VeroFalso> vf = esame.getVF();
 
         for (auto it = domande.begin(); it != domande.end(); ++it) {
+            file << it->serializza(delimiter);
+        }
+        for (auto it = vf.begin(); it != vf.end(); ++it) {
             file << it->serializza(delimiter);
         }
 
