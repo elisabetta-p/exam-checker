@@ -26,7 +26,7 @@ void Database::load(Esame& esame) {
             while (std::getline(buffer, currentValue, delimiter)) 
                 values.push_back(currentValue);
             
-            string tipoDomanda = values[0].substr(1, string::npos);
+            string tipoDomanda = values[0];
             values.erase(values.begin());
             
             
