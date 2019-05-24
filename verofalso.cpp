@@ -27,5 +27,6 @@ string VeroFalso::serializza(char delimiter) const {
 }
 
 VeroFalso VeroFalso::deserializza(const vector<string>& valoriVF) {
+    std::cout << "deserializzo vf" <<std::endl;
     return VeroFalso(std::stoi(valoriVF[0]), std::stoi(valoriVF[1]), std::stoi(valoriVF[2]));
 }

@@ -95,7 +95,7 @@ int Esame::totPunteggioDomande() const {
 }
 
 int Esame::totPunteggioVeroFalso() const {
-    int totVeroFalso = 0, i = vettoreDomanda.size() +1, scelta = 0;
+    int totVeroFalso = 0, i =1, scelta = 0;
     //calcola i punteggi dei vero falso
     for (auto it = vettoreVeroFalso.begin(); it != vettoreVeroFalso.end(); ++it, ++i) {
         std::cout << "Risposta selezionata per Vero Falso numero " << i << ": " << std::endl;
@@ -118,7 +118,9 @@ int Esame::totPunteggioVeroFalso() const {
 }
 
 int Esame::TotPunteggioGlobale() const {
-    return totPunteggioDomande() + totPunteggioVeroFalso();
+    int totD = totPunteggioDomande();
+    int totVF = totPunteggioVeroFalso();
+    return totD + totVF;
 }
 
 const vector<Domanda> Esame::getDomande() const {
