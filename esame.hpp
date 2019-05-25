@@ -30,7 +30,7 @@ public:
     int totPunteggioDomande() const;
     int totPunteggioVeroFalso() const;
     int TotPunteggioGlobale() const;
-    int getVoto(int) const;
+    double getVoto(int) const;
     void save() const;
     void setData(string);
     string getData() const;

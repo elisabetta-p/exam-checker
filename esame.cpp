@@ -45,7 +45,6 @@ void Esame::inserisciValoriDomande(int numDomanda) {
 
 void Esame::inserisciValoriVeroFalso(int numDomanda) {
     try {
-        std::cout << "DJSADSADSA " << numDomanda << std::endl;
         char punteggio;
         VeroFalso verofalso(' ',numDomanda);
         std::cout << "Inserisci se il vero o falso numero " << numDomanda << " e' vero oppure falso, usando V se è vero, F se e' falso (in maiuscolo!): "<< std::endl;
@@ -127,9 +126,10 @@ const vector<VeroFalso> Esame::getVF() const {
     return vettoreVeroFalso;
 }
 
-int Esame::getVoto(int totPunteggio) const {
-    int totPuntiPossibili = vettoreDomanda.size() * 2 + vettoreVeroFalso.size();
-    int voto = totPunteggio*30 / totPuntiPossibili;
+double Esame::getVoto(int totPunteggio) const {
+    double totPuntiPossibili;
+    totPuntiPossibili = vettoreDomanda.size() * 2 + vettoreVeroFalso.size();
+    double voto = totPunteggio*30 / totPuntiPossibili;
     if (voto < 0) return 0;
     else return voto;
 }

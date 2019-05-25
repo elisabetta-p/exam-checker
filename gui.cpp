@@ -35,7 +35,6 @@ void Gui::inserimentoValoriVeroFalso(int numDomandeVF) {
     std::cout << "Per il funzionamento corretto del programma, e' necessario che IN OGNI MOMENTO le lettere V e F, corrispondenti a vero o falso, vengano SEMPRE inserite in MAIUSCOLO!" << std::endl;
     for (int i = 1; i <= numDomandeVF; ++i) {
         //inserimento del valore dei vero/falso
-        std::cout << "AAAAAAAAAAAAA "<<i << std::endl;
         esame.inserisciValoriVeroFalso(i);
     }
 }
