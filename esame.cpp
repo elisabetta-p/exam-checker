@@ -47,7 +47,7 @@ void Esame::inserisciValoriVeroFalso(int numDomanda) {
     try {
         std::cout << "DJSADSADSA " << numDomanda << std::endl;
         char punteggio;
-        VeroFalso verofalso(numDomanda);
+        VeroFalso verofalso(' ',numDomanda);
         std::cout << "Inserisci se il vero o falso numero " << numDomanda << " e' vero oppure falso, usando V se è vero, F se e' falso (in maiuscolo!): "<< std::endl;
         std::cin >> punteggio;
         verofalso.setVF(punteggio);
