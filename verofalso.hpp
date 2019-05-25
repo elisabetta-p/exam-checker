@@ -16,19 +16,20 @@ using std::string;
 
 class VeroFalso {
 private:
-    int VFuno, VFdue, numDomandaVF; //la risposta tre indica la risposta lasciata in bianco
+    char VF;
+    int numDomandaVF; 
 public:
     
-    VeroFalso(int, int=0, int =0);
+    VeroFalso(char, int =0);
     
     //metodi per settare i punteggi
-    void setUno(int);
-    void setDue(int);
+    void setVF(char);
     
     //metodi per ottenere il punteggio della risposta selezionata
-    int getUno() const;
-    int getDue() const;
-    int getTre() const; //getTre() ritorna 0 => domanda saltata
+    char getVF() const;
+    //come gestisco la risposta saltata?
+    
+    //int getTre() const; //getTre() ritorna 0 => domanda saltata
     
     string serializza(char) const;
     static VeroFalso deserializza(const vector<string>&);

@@ -45,14 +45,12 @@ void Esame::inserisciValoriDomande(int numDomanda) {
 
 void Esame::inserisciValoriVeroFalso(int numDomanda) {
     try {
-        int punteggio;
+        std::cout << "DJSADSADSA " << numDomanda << std::endl;
+        char punteggio;
         VeroFalso verofalso(numDomanda);
-        std::cout << "Inserisci il punteggio della PRIMA risposta della domanda VERO O FALSO numero " << numDomanda << ": " << std::endl;
+        std::cout << "Inserisci se il vero o falso numero " << numDomanda << " e' vero oppure falso, usando V se è vero, F se e' falso (in maiuscolo!): "<< std::endl;
         std::cin >> punteggio;
-        verofalso.setUno(punteggio);
-        std::cout << "Inserisci il punteggio della SECONDA risposta della domanda VERO O FALSO numero " << numDomanda << ": " << std::endl;
-        std::cin >> punteggio;
-        verofalso.setDue(punteggio);
+        verofalso.setVF(punteggio);
         vettoreVeroFalso.push_back(verofalso);
         std::cout << " " << std::endl;
     }
@@ -95,21 +93,19 @@ int Esame::totPunteggioDomande() const {
 }
 
 int Esame::totPunteggioVeroFalso() const {
-    int totVeroFalso = 0, i =1, scelta = 0;
+    int totVeroFalso = 0, i =1;
+    char scelta;
     //calcola i punteggi dei vero falso
     for (auto it = vettoreVeroFalso.begin(); it != vettoreVeroFalso.end(); ++it, ++i) {
-        std::cout << "Risposta selezionata per Vero Falso numero " << i << ": " << std::endl;
+        std::cout << "Risposta selezionata per Vero Falso numero " << i << ", scrivere V se e' stato selezionato vero, o F se e' stato selezionato falso (in maiuscolo!): " << std::endl;
         std::cin >> scelta;
-        if(scelta == 1) {
-            totVeroFalso += it->getUno();
+        char rispostaGiusta = it->getVF();
+        if (rispostaGiusta == scelta) {
+            totVeroFalso++;
             std::cout << "Totale parziale dei Vero Falso: " << totVeroFalso << std::endl;
         }
-        else if(scelta == 2) {
-            totVeroFalso += it->getDue();
-            std::cout << "Totale parziale dei Vero Falso: " << totVeroFalso << std::endl;
-        }
-        else if(scelta == 3) {
-            totVeroFalso += it->getTre();
+        else {
+            totVeroFalso--;
             std::cout << "Totale parziale dei Vero Falso: " << totVeroFalso << std::endl;
         }
         std::cout <<" " <<std::endl;

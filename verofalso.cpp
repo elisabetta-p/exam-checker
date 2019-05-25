@@ -10,23 +10,27 @@
 #include "exp.hpp"
 #include "gui.hpp"
 
-VeroFalso::VeroFalso(int numD, int u, int d) : numDomandaVF(numD), VFuno(u), VFdue(u) {}
+VeroFalso::VeroFalso(char vf, int numD) : numDomandaVF(numD), VF(vf) {}
 
-void VeroFalso::setUno(int u) { if (u > 1 || u < -1) throw Exp('r'); else VFuno = u; }
+void VeroFalso::setVF(char vf) {
+    if (vf == 'V' || vf == 'F')
+        VF = vf;
+    else
+        throw Exp('r');
+}
 
-void VeroFalso::setDue(int d) { if (d > 1 || d < -1) throw Exp('r'); VFdue = d;}
+char VeroFalso::getVF() const { return VF; }
 
-int VeroFalso::getUno() const { return VFuno; }
-
-int VeroFalso::getDue() const { return VFdue; }
-
-int VeroFalso::getTre() const { return 0; }
+//int VeroFalso::getTre() const { return 0; }
 
 string VeroFalso::serializza(char delimiter) const {
-    return "V|" + std::to_string(numDomandaVF) + "|" + std::to_string(VFuno) + "|" + std::to_string(VFdue) + "\r\n";
+    std::cout << "serializza num domanda " << numDomandaVF << std::endl;
+    return "V|" + std::to_string(numDomandaVF) + "|" + VF + "\r\n";
 }
 
 VeroFalso VeroFalso::deserializza(const vector<string>& valoriVF) {
-    std::cout << "deserializzo vf" <<std::endl;
-    return VeroFalso(std::stoi(valoriVF[0]), std::stoi(valoriVF[1]), std::stoi(valoriVF[2]));
+    string str1 = valoriVF[1];
+    char c = str1[0];
+    std::cout << "AJDOFJSFJSòDFJKSòKFDSLò  " << valoriVF[0] << std::endl;
+    return VeroFalso(c, std::stoi(valoriVF[0]));
 }

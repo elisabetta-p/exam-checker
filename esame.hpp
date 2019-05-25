@@ -17,6 +17,7 @@ using std::vector;
 #include <iostream>
 #include <string>
 using std::string;
+#include <cctype>
 
 class Esame {
 private:
