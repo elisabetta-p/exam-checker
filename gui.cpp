@@ -74,7 +74,7 @@ void Gui::salvataggioEsame() {
 void Gui::votoEsame() const{
     try {
         std::cout << "Ora c'e' la parte di correzione delle domande." << std::endl;
-        std::cout << "Inserisci in numero la risposta selezionata (5 se e' una domanda lasciata in bianco, 3 se e' un vero falso lasciato in bianco)"<< std::endl;
+        std::cout << "Inserisci in numero la risposta selezionata (5 se e' una domanda lasciata in bianco)"<< std::endl;
         int totPunteggio = esame.TotPunteggioGlobale();
         std::cout << "Il totale dell'esame e': " << totPunteggio << " e ha preso "<< esame.getVoto(totPunteggio) << " su 30. " << std::endl;
     }

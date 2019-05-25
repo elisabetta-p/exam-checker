@@ -96,11 +96,14 @@ int Esame::totPunteggioVeroFalso() const {
     char scelta;
     //calcola i punteggi dei vero falso
     for (auto it = vettoreVeroFalso.begin(); it != vettoreVeroFalso.end(); ++it, ++i) {
-        std::cout << "Risposta selezionata per Vero Falso numero " << i << ", scrivere V se e' stato selezionato vero, o F se e' stato selezionato falso (in maiuscolo!): " << std::endl;
+        std::cout << "Risposta selezionata per Vero Falso numero " << i << ", scrivere V se e' stato selezionato vero, F se e' stato selezionato falso, S se e' stata saltata (in maiuscolo!): " << std::endl;
         std::cin >> scelta;
         char rispostaGiusta = it->getVF();
         if (rispostaGiusta == scelta) {
             totVeroFalso++;
+            std::cout << "Totale parziale dei Vero Falso: " << totVeroFalso << std::endl;
+        }
+        else if (scelta == 'S') { //risposta saltata
             std::cout << "Totale parziale dei Vero Falso: " << totVeroFalso << std::endl;
         }
         else {
