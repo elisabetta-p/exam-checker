@@ -48,9 +48,10 @@ They are implemented through the `verofalso` class (*truefalse*). Each `verofals
 
 ### Exceptions <a name="exp">
 They are implemented through the `exp` class. They handle these cases:
-    * the user has tried to load a non-existing exam 
-    * the user has inserted the wrong score to a question/true or false
-    * the user has selected an answer that does not exist
+  - the user has tried to load a non-existing esam
+ - the user has inserted the wrong score to a question/true or false
+ - the user has selected an answer that does not exist
+ 
 When an exception such as these is caught, the user is prompted to repeat the action they just performed, knowing that there was en error, communicated through a `std::cerr` message.
 
 ## View <a name="gui">
