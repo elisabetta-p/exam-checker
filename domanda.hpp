@@ -1,4 +1,4 @@
-// AAAAAAAAA
+// 
 //  domanda.hpp
 //  exam-checker
 //

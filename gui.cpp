@@ -31,7 +31,7 @@ void Gui::inserimentoValoriDomande(int numDomande) {
 }
 
 void Gui::inserimentoValoriVeroFalso(int numDomandeVF) {
-    std::cout << "Ora ti verra' chiesto di inserire i punteggi delle due risposte ai vero falso." << std::endl;
+    std::cout << "Ora ti verra' chiesto di inserire se la domanda Vero/Falso è VERA oppure FALSA." << std::endl;
     std::cout << "Per il funzionamento corretto del programma, e' necessario che IN OGNI MOMENTO le lettere V e F, corrispondenti a vero o falso, vengano SEMPRE inserite in MAIUSCOLO!" << std::endl;
     for (int i = 1; i <= numDomandeVF; ++i) {
         //inserimento del valore dei vero/falso
