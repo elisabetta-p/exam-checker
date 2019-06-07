@@ -6,6 +6,7 @@
      3. [True or False](#tf)
      4. [Exceptions](#exp)
  4. [View](#gui)
+     1. [Translations](#trans)
  5. [Compiling and executing](#comp)
 
 # Exam-Checker <a name="exam-checker">
@@ -62,7 +63,33 @@ After the user has inserted the value of each answer to every question, the appl
 After the creation of the exam there is the correction part: here the user is asked to insert the answer that the student has chosen in each and every question. If a multiple-choice question was left blank its score is 0, and the user needs to insert **5** into the command line. If a true of false was left blank, the user needs to insert a **S** into the command line.
 
 After the process of inserting the selected answers has ended, the user is presented with the total grade of the exam, and the score expressed in /30.
-    
+
+### Translations 
+
+|Italian|English|
+|---|---|
+|Da quante domande e' composto l'esame?|By how many multiple choice questions is the exame composed?|
+|Da quante domande Vero Falso e' composto l'esame?|By how many true or false questions is the exame composed?|
+|Ora ti verra' chiesto di inserire i punteggi delle quattro risposte alle domande.|Now you will be asked to insert the score for each answer to the questions.|
+|Ora ti verra' chiesto di inserire se la domanda Vero/Falso è VERA oppure FALSA.|Now you will be asked to insert wether the true or false question is TRUE or FALSE|
+|Per il funzionamento corretto del programma, e' necessario che **in ogni momento** le lettere V e F, corrispondenti a vero o falso, vengano SEMPRE inserite in **maiuscolo**!|For the correct execution of the program, it is necessary that **every time you need to insert** the letters V and F, which correspond to true or false, they are inserted in **upper case**|
+|Inserisci la data dell'esame (non usare / o \ nel formato della data):|Insert the date of the exam (do not use / or \\):|
+|Inserisci il nome dell'esame che vuoi caricare:|Insert the name of the exam you want to load:|
+|Salvataggio del nuovo esame avvenuto con successo|The new exam has been saved successfully|
+|Ora c'e' la parte di correzione delle domande.|Now the grading of the multiple-choice questions part will begin|
+|Inserisci in numero la risposta selezionata (5 se e' una domanda lasciata in bianco)|Insert the number of the selected answer|
+|Il totale dell'esame e': *x* e ha preso *y* su 30.|The total grade is: *x* and the vote is *y* out of 30.|
+|Devi creare un nuovo esame o devi caricarne uno vecchio? Se devi caricarne uno vecchio premi V ed inserisci il percorso del file. Se devi caricarne uno nuovo premi N.|Do you need to create a new exam or do you need to load an old one? If you need to load an old one press V, if you need to create a new one press N.|
+|Caricamento o creazione del nuovo esame fallito!|Loading or creation of the new exam has failed|
+|Valore di risposta inserito sbagliato|Wrong answer value inserted|
+|Hai selezionato una risposta che non esiste|You have selected an answer that doesn't exist|
+|Inserisci il punteggio della PRIMA/SECONDA/TERZA/QUARTA risposta della domanda numero *x*|Insert the score of the FIRST/SECOND/THIRD/FOURTH answer to the question number *x*|
+|Inserisci se il vero o falso numero *x* e' vero oppure falso, usando V se è vero, F se e' falso (in maiuscolo!)|Insert wether the true or false number *x* is true or false, using V is it is true, and F if it is false (upper case!)|
+|Risposta selezionata per domanda numero *x*|Answer chosen for question number *x*|
+|Totale parziale|Partial total|
+|Risposta selezionata per Vero Falso numero *x*, scrivere V se e' stato selezionato vero, F se e' stato selezionato falso, S se e' stata saltata (in maiuscolo!)|Selected answer for the True or False number *x*, write V if true has been selected, F if false has been selected, and S if it's blank (upper case!)|
+|Totale parziale dei Vero Falso|Partial total of the true and false|
+
 ## Compiling and execution <a name="comp">
     
 **On UNIX**
