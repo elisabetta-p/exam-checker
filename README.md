@@ -8,6 +8,8 @@
  4. [View](#gui)
      1. [Translations](#trans)
  5. [Compiling and executing](#comp)
+     1. [UNIX](#unix)
+     2. [Windows](#windows)
 
 # Exam-Checker <a name="exam-checker">
 **Exam-checker** is a C++ application made to aid the grading of exam papers composed by multiple choice questions and true or false questions.
@@ -93,7 +95,7 @@ After the process of inserting the selected answers has ended, the user is prese
 
 ## Compiling and execution <a name="comp">
     
-**On UNIX**
+**On UNIX** <a name="unix">
 
 Inside Terminal:
     
@@ -103,7 +105,7 @@ g++ exam-checker_path -o exam-checker
 ./exam-checker
 ```
 
-**On Windows**
+**On Windows** <a name="windows">
 
 Inside a Unix Terminal Emulator (cygwin64):
     
