@@ -64,7 +64,7 @@ After the creation of the exam there is the correction part: here the user is as
 
 After the process of inserting the selected answers has ended, the user is presented with the total grade of the exam, and the score expressed in /30.
 
-### Translations 
+### Translations <a name="trans">
 
 |Italian|English|
 |---|---|
