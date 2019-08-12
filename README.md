@@ -10,6 +10,7 @@
  5. [Compiling and executing](#comp)
      1. [UNIX](#unix)
      2. [Windows](#windows)
+ 6. [Special Thanks](#thanks)
 
 # Exam-Checker <a name="exam-checker">
 **Exam-checker** is a C++ application made to aid the grading of exam papers composed by multiple choice questions and true or false questions.
@@ -112,3 +113,6 @@ Inside a Unix Terminal Emulator (cygwin64):
 ```g++ -static -static-libgcc -static-libstdc++ *.cpp -o exam-checker.exe```
     
 The ```cygwin1.dll``` file needs to be in the same folder as the ```.exe``` file.
+
+## Special Thanks <a name="thanks">
+ To [Federico Rispo](https://github.com/federicorispo), thank you so much for your knowledge, patience, love and support ❤️
